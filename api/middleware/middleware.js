@@ -31,7 +31,7 @@ function validateUser(req, res, next) {
 function validatePost(req, res, next) {
   const newPost = req.body
   if ( newPost.text ) {
-    req.text = newPost
+    req.text = newPost.text
     next()
   } else {
     next({ status:400, message:"missing required text field"})
